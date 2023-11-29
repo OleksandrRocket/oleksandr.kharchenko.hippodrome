@@ -14,7 +14,6 @@ class HippodromeTest {
     public void constructorShouldReturnExceptionWhenParamIsNull() {
         assertThrows(IllegalArgumentException.class, () -> new Hippodrome(null));
     }
-
     @Test
     public void constructorShouldEqualsExceptionMessageWhenParamIsNull() {
         try {
@@ -44,7 +43,7 @@ class HippodromeTest {
     public void getHorsesShouldReturnSameListHorses() {
         List<Horse> horses = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
-            horses.add(new Horse("Hors" + i, 1 + i, 2 + i));
+            horses.add(new Horse("Horse" + i, 1 + i, 2 + i));
         }
         List<Horse> horseList = new Hippodrome(horses).getHorses();
         for (int i = 0; i < 30; i++) {
@@ -70,7 +69,7 @@ class HippodromeTest {
     public void getWinnerShouldReturnHorseWithMaxDistance() {
         List<Horse> horses = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            horses.add(new Horse("Hors" + i, 1 + i, 2 + i));
+            horses.add(new Horse("Horse" + i, 1 + i, 2 + i));
         }
         Horse winner = new Hippodrome(horses).getWinner();
         assertEquals(11, winner.getDistance());
